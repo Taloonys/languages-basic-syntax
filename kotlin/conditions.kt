@@ -49,7 +49,10 @@ fun for_block() {
     toploop@ for (i in 1..2)    // loop marking
     {              
         for (j in 1..2) {
-            break@toploop;      // mark usage
+            for (k in 1..2) {
+                continue@toploop
+            }
+            break@toploop       // mark usage
         }
     }
 }
