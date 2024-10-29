@@ -1,4 +1,4 @@
-fun default_func(num: Int, str: String, bl: Boolean = false) 
+fun default_func(num: Int, str: String, bl: Boolean = false) : Unit     // is like `void`
 { /* Empty */ }
 
 
