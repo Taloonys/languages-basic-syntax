@@ -17,6 +17,7 @@ fun paramsInit() {
     val num5: Int   = doub1.toInt()
 
     val any1: Any   = "NowStr"
+
 }
 
 
@@ -30,10 +31,15 @@ fun ranges() {
 }
 
 
-const val num2 = 2          // compile time constant & only for non-func/non-class scope
+const val num2 = 2          /**< compile time constant & only for non-func/non-class scope */
 
 fun constant_value() {
     val num1: Int           // could be assigned only once, so `val` -> only init
     num1 = 11
     //num1 = 55             // err
+}
+
+
+fun main() {
+    var arr = Array<Int>(2) {1, 2}  
 }
