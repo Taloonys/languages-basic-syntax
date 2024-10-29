@@ -1,6 +1,7 @@
 class Dog(val name: String) {                   /**< It's a PRIMARY constructor*/
 
     var breed: String = ""                      /**< MUST be init'ed */
+    lateinit var someValue: Int                 /**< `lateinit` allow be init'ed later */
 
     init {                                      /**< Constructor, `init = ` isn't allowed*/
         println("Dog name is $name")
@@ -11,6 +12,7 @@ class Dog(val name: String) {                   /**< It's a PRIMARY constructor*
     {
         println("*secondary constructor*")
         this.breed = breed
+        lateinit = 5
     }
 }
 

@@ -40,6 +40,12 @@ fun constant_value() {
 }
 
 
+val pi: Float by lazy {     // apply lazy evaluation
+    3.14f
+}
+
 fun main() {
     var arr = Array<Int>(2) {1, 2}  
+
+    val tmp = 2 * pi
 }
