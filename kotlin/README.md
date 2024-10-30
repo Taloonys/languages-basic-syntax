@@ -5,7 +5,8 @@
 * `Multiparadigm`
 * bold compile -> `kotlinc`
     * run -> `java`
-* Kotlin is incredibly rich on features language, a lot came from both Haskell and Python
+* Kotlin is `incredibly rich` on features language, a lot came from both Haskell and Python. 
+    * I described a few contents... it's kinda huge
 
 ## Java
 * `Fully OOP`, no procedure, every single method or class param should be marked personally (public and etc)
