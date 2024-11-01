@@ -22,3 +22,12 @@ fn smart_lambda() {
     */
 }
 
+fn capture_block() {
+    let mut x = 1;
+    let mut increment = || {    // `mut` allow to change captured values
+        x += 1;                 // captured from closest scope
+    };
+    
+    increment();
+    println!("x = {x}");
+}
