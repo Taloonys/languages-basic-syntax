@@ -2,8 +2,17 @@ fn formatting() {
     let name = "John";
     let age  = 55;
 
-    println!("Name is {name}, age is {age}");
-
+    println!("Name is {name}, age is {age}");           // string interpolation
+    println!("Name is {}, age is {}", name, age);       // as ordered
+    println!("Name is {1} , age is {0}", age, name);    // set positions
+    // println!("Name is {1} , age is {0}", age);       /*<-- err, not argument for {1} */
+    println!("{name}, {age}, {end_title}",              // add new "argument"
+             end_title="..end..");                      // .. specify new argument
+    println!("{num:>5}", num=5);                        // 5 whitespaces before `num`
+    println!("{num:0>5}", num=5);                       // 5 `0` before `num`
+    println!("{num:0<5}", num=5);                       // 5 `0` after `num`
+    println!("{:?}", age);                              // pretty printing, look for fmt
+                                                        
     /*
      * sad story: we can't use just this
      * println!(name, age);
