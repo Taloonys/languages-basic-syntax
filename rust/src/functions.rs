@@ -5,8 +5,8 @@ fn summ(x: i32, y: i32) -> i32 { x + y }
 
 
 fn form_card(name: &str, age: i32) {
-    println!("-- name -> {}", name);
-    println!("-- age  -> {}", age);
+    println!("-- name -> {name}");
+    println!("-- age  -> {age}");
 }
 
 
