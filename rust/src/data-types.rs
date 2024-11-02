@@ -38,3 +38,17 @@ fn casting() {
  fn const_value() {
     const PI : f32 = 3.14;          // it's a compile time constant!
  }
+
+
+ fn ranges() {
+    let numerals    = 0..9;         // [0, 9) , `9` is excluded
+    let numerals1   = 0..=9;        // [0, 9], `9` is included
+    for num in 0..9 {
+        print!("{num} ");
+    }
+
+    let numbers = std::ops::Range{  // full explicit way
+        start   : 1, 
+        end     : 9 
+    };
+ }

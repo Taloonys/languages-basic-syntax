@@ -13,13 +13,13 @@ fn main() {
 
 
 fn test() {
-    let block = {
-        println!("init block");             // would be called rn
-        let a = 5;
-        999
-    };
+    let person = ("John", 50);
 
-    block;                                  // ok
-    // block();                             /*<-- err, not like this */
-    println!("{block}");                    // will print return value -> `999`
+    if let ("John", 50) = person {
+        println!("Success case, corteges are equal");
+    }
+
+    if let ("John", age) = person {
+        println!("case: {age} -> should be 50");
+    }
 }

@@ -1,5 +1,7 @@
 python/some_file.txt
 
-haskell/.ipynb_checkpoints/
 haskell/.Trash*
+haskell/.ipynb_checkpoints/
+
 rust/target/
+rust/.devcontainer/
