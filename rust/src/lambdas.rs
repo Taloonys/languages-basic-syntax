@@ -22,6 +22,7 @@ fn smart_lambda() {
     */
 }
 
+
 fn capture_block() {
     let mut x = 1;
     let mut increment = || {    // `mut` allow to change captured values
@@ -30,4 +31,42 @@ fn capture_block() {
     
     increment();
     println!("x = {x}");
+}
+
+
+fn closure_types() {
+    /**
+     * 3 types of lambda:
+     *  - Fn        - only read values
+     *  - FnMut     - can change values
+     *  - FnOnce    - takes ownership
+     * Usually it's auto deducted
+     */
+
+    let mut a = 5;
+    let fn_lambda = || {                                    // Fn
+        println!("a={a}, could only be `read`");
+    };
+
+    fn_lambda();
+    println!("{a}");
+
+    let mut fn_mut_lambda = || {                            // FnMut
+        a += 10;
+        println!("a in fn_mut_lambda = {a}");
+    };
+
+    fn_mut_lambda();
+    println!("{a}");
+
+    let t = 22;                                             // declara immutable value
+    let fn_once_lambda = || {                               // FnOnce
+        let mut b = t;                                      // get ownership
+        println!("in fnOnce lambda 22 turned into {new_b}", 
+                    new_b = b + 10);
+    };
+
+    fn_once_lambda();
+
+    // t += 10;                                             /*<-- Err, we already "moved" `t` */
 }
