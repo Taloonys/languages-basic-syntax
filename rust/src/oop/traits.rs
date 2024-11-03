@@ -1,18 +1,8 @@
-// Short comment 
+//
+// Traits is like a physical trait, but implements sth like interface of it
+//
 
-/*
-
- */
-
-
-fn main() {
-    println!("Entry point");
-
-    test();
-}
-
-
-trait Work {
+trait Work {                                                            // more like an interface for trait
     fn work(&self);
 
     fn die(&self) { println!("The end is the same for everyone"); }     // default implementation
@@ -25,13 +15,14 @@ trait Work {
     }
 }
 
-struct Robot {
+
+struct Robot {                                                          // target
     accuracy    : f32,
     cpu_pow     : i32
 }
 
 
-impl Work for Robot {
+impl Work for Robot {                                                   // implementation of trait for target
     fn spawn_cheep(accuracy: f32) -> Self {
         Robot {
             accuracy, 
@@ -50,7 +41,7 @@ impl Work for Robot {
 }
 
 
-fn test() {
+fn usage() {
     let boby = Robot { 
         accuracy    : 99.9,
         cpu_pow     : 24
@@ -61,4 +52,5 @@ fn test() {
 
     let dummy = Robot::spawn_cheep(50.5);
     dummy.wokr_n_report();
+
 }

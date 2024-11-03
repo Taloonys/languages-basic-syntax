@@ -59,7 +59,7 @@ fn closure_types() {
     fn_mut_lambda();
     println!("{a}");
 
-    let t = 22;                                             // declara immutable value
+    let t = 22;                                             // declare immutable value
     let fn_once_lambda = || {                               // FnOnce
         let mut b = t;                                      // get ownership
         println!("in fnOnce lambda 22 turned into {new_b}", 
