@@ -69,4 +69,11 @@ fn closure_types() {
     fn_once_lambda();
 
     // t += 10;                                             /*<-- Err, we already "moved" `t` */
+
+    let d = 22;
+    let move_lambda = move || {                             // keyword `move`, that makes closure to pass ownership
+        println!("{d}");                                    // .. but lambda type is still `Fn` or `FnMut`
+    };
+
+    // d += 10;                                             /*<-- Err, we moved `d` */
 }

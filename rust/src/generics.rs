@@ -1,5 +1,6 @@
 //
 // Could be used in funcs and structs
+// Any single cases below could be intruded in each other "places" and "cases"
 //
 
 struct Stormtrooper <Id, Experience> {
@@ -39,16 +40,22 @@ fn stuct_generics() {
     }
 }
 
+//
+// Expanded
+//
 
 struct Circle {
     radius: f32
 }
  
+
 trait Drawable<T = Circle> {                                        // default type param
     fn draw(&self, figure:&T);
 }
 
+
 struct CircleGui;
+
 
 impl Drawable<Circle> for CircleGui {           // implementation for `T` as `Circle`
     fn draw(&self, figure: &Circle) {           // assume it to be Circle
@@ -57,14 +64,37 @@ impl Drawable<Circle> for CircleGui {           // implementation for `T` as `Ci
     }
 }
 
+
 impl<T> Drawable<T> for Circle {                                    // standard
     fn draw(&self, figure: &T) { println!("No-no, use gui") }
 }
 
+
+// Trait bound
+// [allow only some types for Generic]
+fn draw_figure<T>(drawable: &T, figure: &Circle) where T: Drawable {        // also `where` syntax
+    drawable.draw(figure);                                                  // .. also ok for structs
+}
+
+trait DummyTrait { 
+    fn doNothing() { /* Empty */ } 
+}
+
+impl<T> DummyTrait for T                                                    // We could use generic such case
+{ }                                                   
+
+fn multiple_traits<T>(drawable: &(impl Drawable + DummyTrait))              // Multiple traits
+{ }
+
+
+//
+// Use
+//
 
 fn trait_generics() {
     let gui     = CircleGui{};
     let circle  = Circle{radius: 2.0};
 
     gui.draw(&circle);
+    draw_figure(&gui, &circle);
 }
