@@ -8,3 +8,4 @@ Own stuff for fast "mental" switch between languages concepts and syntax.
 - Haskell -> `jupyter format` + skipped some info, cuz it's an overdo for just concepts learning
 - Golang  -> `just code`
 - Rust    -> in process...
+- Zig     -> in brightest future
