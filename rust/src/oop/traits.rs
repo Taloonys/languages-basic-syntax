@@ -41,6 +41,16 @@ impl Work for Robot {                                                   // imple
 }
 
 
+fn as_input_param(workable: &impl Work) {                               // input as any object, that has such trait
+    workable.die();                                                     // call trait's stuff
+}
+
+
+fn working_robot(accuracy: f32, cpu_pow: i32) -> impl Work {            // returns an object, that must have `Work` trait impl
+    Robot {accuracy, cpu_pow}
+}
+
+
 fn usage() {
     let boby = Robot { 
         accuracy    : 99.9,
@@ -50,7 +60,10 @@ fn usage() {
     boby.work();
     boby.die();
 
+    as_input_param(boby);
+    let _better_boby = working_robot(99.9, 50);                         // remember for rust it looks like a function
+
     let dummy = Robot::spawn_cheep(50.5);
     dummy.wokr_n_report();
-
 }
+

@@ -11,54 +11,31 @@ fn main() {
     test();
 }
 
+struct Circle {
+    radius: f32
+}
+ 
+trait Drawable<T = Circle> {                                        // default type param
+    fn draw(&self, figure:&T);
+}
 
-trait Work {
-    fn work(&self);
+struct CircleGui;
 
-    fn die(&self) { println!("The end is the same for everyone"); }     // default implementation
-
-    fn spawn_cheep(accuracy: f32) -> Self;                              // associative / static function
-
-    fn wokr_n_report(&self) {
-        self.work();                                                    // use Trait's method
-        println!("Work is finished");
+impl Drawable<Circle> for CircleGui {                               // implementation for `T` as `Circle`
+    fn draw(&self, figure: &Circle) {                               // assume it to be Circle
+        println!("A circle with radius {r}",                        // we can use `radius` only due to `Circle` as `T`
+            r = figure.radius);                                     // .. so there are no attempts to instantiate as it should be...
     }
 }
 
-struct Robot {
-    accuracy    : f32,
-    cpu_pow     : i32
-}
-
-
-impl Work for Robot {
-    fn spawn_cheep(accuracy: f32) -> Self {
-        Robot {
-            accuracy, 
-            cpu_pow: 5
-        }
-    }
-
-    fn work(&self) { 
-        println!("Work in process, chance to do it {acc}%", 
-                    acc = &self.accuracy);
-        println!(".. time left: {t} s", 
-                    t   = 3600 / &self.cpu_pow);
-    }
-    
-    // `die()` here is skipped
+impl<T> Drawable<T> for Circle {                                    // standard
+    fn draw(&self, figure: &T) { println!("No-no, use gui") }
 }
 
 
 fn test() {
-    let boby = Robot { 
-        accuracy    : 99.9,
-        cpu_pow     : 24
-    };
+    let gui = CircleGui{};
+    let circle = Circle { radius: 2.0 };
 
-    boby.work();
-    boby.die();
-
-    let dummy = Robot::spawn_cheep(50.5);
-    dummy.wokr_n_report();
+    gui.draw(&circle);
 }
