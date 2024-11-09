@@ -16,7 +16,7 @@ struct CircleGui;                                                           /**<
 
 
 //
-// Implementation for `T` as `Circle`
+// Implementation for `T` as `Circle`, knwon as `conditional conformance`
 //
 
 impl Drawable<Circle> for CircleGui {           
@@ -43,28 +43,6 @@ impl<T> Drawable<T> for Circle {
 fn draw_figure<T>(drawable: &T, figure: &Circle) where T: Drawable {        // also `where` syntax
     drawable.draw(figure);                                                  // .. also ok for structs
 }
-
-
-trait DummyTrait {                                                          /**< supportive example */ 
-    fn doNothing() 
-    { /* Empty */ } 
-}
-
-
-//
-// Trait implementation for "any" type
-//
-
-impl<T> DummyTrait for T
-{ }                                                   
-
-
-//
-// Multiple traits (but better use `where`)
-//
-
-fn multiple_traits<T>(drawable: &(impl Drawable + DummyTrait))
-{ }
 
 
 //

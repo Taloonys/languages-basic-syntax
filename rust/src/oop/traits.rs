@@ -51,7 +51,7 @@ fn working_robot(accuracy: f32, cpu_pow: i32) -> impl Work {            // retur
 }
 
 
-fn usage() {
+fn main() {
     let boby = Robot { 
         accuracy    : 99.9,
         cpu_pow     : 24
@@ -67,3 +67,12 @@ fn usage() {
     dummy.wokr_n_report();
 }
 
+
+//
+// Multiple traits
+//
+
+trait DummyTrait { /* Empty */}
+
+fn multiple_traits<T>(drawable: &(impl Work + DummyTrait))
+{ }
