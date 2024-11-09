@@ -5,4 +5,5 @@
 * `cargo` is `build system` + `packet manager`
 
 # Notes
-* super comfortable cargo made me to use it inside `syntax notes`, sry (
+* super comfortable cargo made me to use it inside `syntax notes`, but it prb would be deleted
+* i'll use `fn main()` for every single `.rs` file
