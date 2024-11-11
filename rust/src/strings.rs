@@ -12,6 +12,8 @@ fn formatting() {
     println!("{num:0>5}", num=5);                       // 5 `0` before `num`
     println!("{num:0<5}", num=5);                       // 5 `0` after `num`
     println!("{:?}", age);                              // pretty printing, look for fmt
+
+    dbg!("{name}, {age}");                              // debug variant, also prints [folder/file:line:position]
                                                         
     /*
      * sad story: we can't use just this
@@ -26,7 +28,9 @@ fn char_symbol() {
 
 
 fn string_init() {
-    let text: &str = "text";    // that's a string, array of UTF-8 symbols
+    let text: &str = "text";            // that's a `string literal`, array of UTF-8 symbols, they live as `static` in memory
+                                        // .. &str is like a view to immutable array of chars
+    let text2 = String::from("text");   // that's pointer + size
 }
 
 

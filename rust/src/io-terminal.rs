@@ -1,6 +1,6 @@
 
-#[derive(Debug)]
-struct Data {                       // makes possible for `pretty printing` like `{:?}`
+#[derive(Debug)]                                            // makes possible for `pretty printing` like `{:?}`
+struct Data {                       
     title   : String,
     data    : i32
 }
@@ -21,11 +21,11 @@ fn input_keyboard() {
 
 
 fn main() {
-    let title = "ClickHouse";
-    let data_val = 999;
+    let title       = "ClickHouse";
+    let data_val    = 999;
 
     println!("{title}, {data}");
-    dbg!("{title}, {data}");                                // debug variant, also prints [folder/file:line:position]
+    dbg!("{title}, {data}");
 
     let data = Data {
         title: title.to_string(), 
