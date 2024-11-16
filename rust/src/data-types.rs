@@ -1,5 +1,6 @@
 /**
  * Warning: Rust will warning unused variables: `value` -> `_value`
+ * There are no `void` type, but there could be `unit` type ~ also could be used as `()` but u can't use it directly
  */
 
 fn params() {
