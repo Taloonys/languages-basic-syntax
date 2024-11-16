@@ -26,16 +26,16 @@ fn main() {
     //
 
     let _string_collection = {
-        let text1 = String::new();          // String
-        let _text2 = "Asd";                  // string literal*
-        let text3 = "asd".to_string();      // String
-        let text4 = String::from("asd");    // String
+        let text1 = String::new();              // String
+        let _text2 = "Asd";                     // string literal*
+        let text3 = "asd".to_string();          // String
+        let text4 = String::from("asd");        // String
 
         dbg!("{}", text1.len());
 
         println!("{concatenation}", concatenation = text3 + &text4);
 
-        let _slice_val = &text4[0..3];       // Slice
+        let _slice_val = &text4[0..3];          // Slice
     };
 
     //
@@ -50,7 +50,7 @@ fn main() {
         ]);
 
         let raw_data = vec![ ("Alice", 35), ("Tom", 39) ];
-        let _people: HashMap<_, _> = raw_data.iter().cloned().collect();        // get iterator on data, clone stuff, collect in hmap
+        let _people: HashMap<_, _> = raw_data.iter().cloned().collect();    // get iterator on data, clone stuff, collect in hmap
 
         hmap1.insert(999, "idk");
         dbg!("{} {}", hmap2["tttt"], hmap2.contains_key("asd"));
