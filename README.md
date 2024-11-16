@@ -16,4 +16,4 @@ Own stuff for fast "mental" switch between languages concepts and syntax.
 * Rust
   * -> in process...
 * Zig
-  * -> in brightest future
+  * -> [Kinda short and good explanation](https://www.openmymind.net/learning_zig/)
