@@ -14,6 +14,6 @@ Own stuff for fast "mental" switch between languages concepts and syntax.
 * Golang
   * -> `just code`
 * Rust
-  * -> in process...
+  * -> `just code`
 * Zig
   * -> [Kinda short and good explanation](https://www.openmymind.net/learning_zig/)
