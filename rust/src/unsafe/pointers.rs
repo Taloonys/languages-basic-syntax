@@ -11,4 +11,13 @@ fn main() {
         let imp_pa = *pa;                           // but unnaming pointers is unsafe
         println!("{imp_pa}");
     }
+
+    let _unsafe_cell = {                            // unsafe version for Rust smart pointer `Cell`
+        let i32_heap = UnsafeCell::new(555);
+
+        unsafe {                                    // only unsafe operations could be done with data inside
+            *i32_heap.get() = 100;
+            println!("{}", *i32_heap.get());
+        }    
+    };
 }

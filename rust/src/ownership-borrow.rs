@@ -18,6 +18,7 @@ fn borrowing_info() {
     //
     // Rust implement reference checker mechanism called `borrow checker`, it works at compile time
     // borrow checker rules -> https://rustc-dev-guide.rust-lang.org/borrow_check.html
+    // one of the most important rules -> it's IMPOSSIBLE TO HAVE MORE THAN 1 MUTTABLE REF SIMULTANEOUSLY
     //
 
     let s1 = "Text".to_string();
