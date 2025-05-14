@@ -15,5 +15,7 @@ Own stuff for fast "mental" switch between languages concepts and syntax.
   * -> `just code`
 * Rust
   * -> `just code`
+* Lua
+  * -> [Incredibly short, that's why a leave a speedrun here](https://tylerneylon.com/a/learn-lua/)
 * Zig
   * -> [Kinda short and good explanation](https://www.openmymind.net/learning_zig/)
