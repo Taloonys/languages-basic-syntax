@@ -1,6 +1,8 @@
 # languages-basic-syntax
 Own stuff for fast "mental" switch between languages concepts and syntax.
 
+* *even cooler view* -> https://quickref.me/
+
 * Python
   * -> `jupyter format`
 * C++
